@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper Articles</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Newspaper Articles</h1>
+    </header>
+
+    <nav>
+        <a href="#" onclick="showHomePage()">Home</a>
+        <a href="#" onclick="showCategory('politics')">Politics</a>
+        <a href="#" onclick="showCategory('technology')">Technology</a>
+        <a href="#" onclick="showCategory('entertainment')">Entertainment</a>
+        <a href="#" onclick="showCategory('sports')">Sports</a>
+    </nav>
+
+    <section id="articleSection">
+        <h2>Article Title</h2>
+        <p>Article content goes here...</p>
+    </section>
+
+    <footer>
+        &copy; 2023 Newspaper Articles
+    </footer>
+
+    <script>
+        function showHomePage() {
+            document.getElementById('articleSection').innerHTML = `
+                <h2>Home Page</h2>
+                <p>Welcome to the home page. Browse categories using the navigation bar.</p>
+            `;
+        }
+
+        function showCategory(category) {
+            // You would typically fetch article information from a server based on the category
+            // For simplicity, a static message is used here
+            const articleContent = `Article content for ${category} goes here...`;
+
+            document.getElementById('articleSection').innerHTML = `
+                <h2>${category.charAt(0).toUpperCase() + category.slice(1)}</h2>
+                <p>${articleContent}</p>
+            `;
+        }
+    </script>
+
+</body>
+</html>
